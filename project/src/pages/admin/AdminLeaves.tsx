@@ -112,13 +112,13 @@ const AdminLeaves: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+
       <div>
         <h1 className="text-3xl font-bold text-gray-900">Leave Requests</h1>
         <p className="text-gray-600 mt-1">Review and manage employee leave applications</p>
       </div>
 
-      {/* Filters */}
+
       <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
         <div className="flex flex-col sm:flex-row sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
           <div className="flex-1 relative">
@@ -147,7 +147,7 @@ const AdminLeaves: React.FC = () => {
         </div>
       </div>
 
-      {/* Leave Requests */}
+
       <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden">
         {filteredLeaves.length === 0 ? (
           <div className="text-center py-12 px-6">
@@ -234,7 +234,7 @@ const AdminLeaves: React.FC = () => {
         )}
       </div>
 
-      {/* Review Modal */}
+
       {selectedLeave && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl p-6 w-full max-w-lg shadow-2xl">

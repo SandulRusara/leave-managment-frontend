@@ -54,7 +54,7 @@ const AdminDashboard: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Welcome Section */}
+
       <div className="bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 rounded-2xl p-8 text-white shadow-xl">
         <div className="flex items-center justify-between">
           <div>
@@ -73,7 +73,7 @@ const AdminDashboard: React.FC = () => {
         </div>
       </div>
 
-      {/* Stats Grid */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
         <StatCard
           title="Total Employees"
@@ -110,9 +110,9 @@ const AdminDashboard: React.FC = () => {
         />
       </div>
 
-      {/* Quick Actions */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Recent Activity */}
+
         <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-gray-900">Quick Stats</h2>
@@ -146,7 +146,7 @@ const AdminDashboard: React.FC = () => {
           </div>
         </div>
 
-        {/* Leave Distribution */}
+
         <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-gray-900">Leave Distribution</h2>
@@ -154,7 +154,7 @@ const AdminDashboard: React.FC = () => {
           </div>
           
           <div className="space-y-4">
-            {/* Progress bars for different statuses */}
+
             <div className="space-y-3">
               <div>
                 <div className="flex justify-between text-sm mb-1">
