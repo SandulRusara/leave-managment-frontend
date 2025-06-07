@@ -63,7 +63,7 @@ const EmployeeDashboard: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Welcome Section */}
+
       <div className="bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 rounded-2xl p-8 text-white shadow-xl">
         <div className="flex items-center justify-between">
           <div>
@@ -82,7 +82,7 @@ const EmployeeDashboard: React.FC = () => {
         </div>
       </div>
 
-      {/* Stats Grid */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard
           title="Total Requests"
@@ -110,7 +110,7 @@ const EmployeeDashboard: React.FC = () => {
         />
       </div>
 
-      {/* Recent Leave Requests */}
+
       <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-gray-900">Recent Leave Requests</h2>

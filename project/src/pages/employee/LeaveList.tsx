@@ -94,7 +94,7 @@ const LeaveList: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">My Leave Requests</h1>
@@ -109,7 +109,7 @@ const LeaveList: React.FC = () => {
         </button>
       </div>
 
-      {/* Filters */}
+
       <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
         <div className="flex flex-col sm:flex-row sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
           <div className="flex-1 relative">
@@ -138,7 +138,7 @@ const LeaveList: React.FC = () => {
         </div>
       </div>
 
-      {/* Leave Requests */}
+
       <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden">
         {filteredLeaves.length === 0 ? (
           <div className="text-center py-12 px-6">

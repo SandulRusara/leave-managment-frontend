@@ -64,7 +64,7 @@ const ApplyLeave: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+
       <div className="flex items-center space-x-4">
         <button
           onClick={() => navigate('/leaves')}
@@ -78,10 +78,10 @@ const ApplyLeave: React.FC = () => {
         </div>
       </div>
 
-      {/* Form */}
+
       <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          {/* Leave Type */}
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-3">
               Leave Type
@@ -114,7 +114,7 @@ const ApplyLeave: React.FC = () => {
             )}
           </div>
 
-          {/* Date Range */}
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label htmlFor="start_date" className="block text-sm font-medium text-gray-700 mb-2">
@@ -167,7 +167,7 @@ const ApplyLeave: React.FC = () => {
             </div>
           </div>
 
-          {/* Duration Display */}
+
           {daysRequested > 0 && (
             <div className="p-4 bg-blue-50 rounded-xl">
               <div className="flex items-center space-x-2">
@@ -179,7 +179,7 @@ const ApplyLeave: React.FC = () => {
             </div>
           )}
 
-          {/* Reason */}
+
           <div>
             <label htmlFor="reason" className="block text-sm font-medium text-gray-700 mb-2">
               Reason for Leave
@@ -206,7 +206,7 @@ const ApplyLeave: React.FC = () => {
             )}
           </div>
 
-          {/* Submit Button */}
+
           <div className="flex justify-end space-x-4">
             <button
               type="button"
