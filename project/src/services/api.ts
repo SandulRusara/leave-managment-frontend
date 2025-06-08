@@ -3,7 +3,7 @@ import { User, LeaveRequest, LeaveStats } from '../types';
 
 const API_BASE_URL = 'http://localhost:8000/api';
 
-// Create axios instance
+
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
@@ -11,7 +11,7 @@ const api = axios.create({
   },
 });
 
-// Add token to requests
+
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -20,7 +20,7 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Mock data for demonstration
+
 const mockUsers: User[] = [
   {
     id: 1,
@@ -89,7 +89,7 @@ const mockLeaveRequests: LeaveRequest[] = [
   },
 ];
 
-// Mock API functions (replace with real API calls)
+
 export const authAPI = {
   login: async (email: string, password: string) => {
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -130,7 +130,7 @@ export const authAPI = {
 
   getUser: async () => {
     await new Promise(resolve => setTimeout(resolve, 500));
-    return mockUsers[1]; // Return mock user
+    return mockUsers[1];
   },
 };
 
