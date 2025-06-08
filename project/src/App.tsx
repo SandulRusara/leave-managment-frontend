@@ -1,11 +1,11 @@
-import React from 'react';
+// import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Layout from './components/Layout';
 
-// Pages
+
 import Login from './pages/Login';
 import Register from './pages/Register';
 import EmployeeDashboard from './pages/employee/Dashboard';
@@ -50,7 +50,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             
-            {/* Employee Routes */}
+
             <Route path="/dashboard" element={
               <ProtectedRoute requiredRole="employee">
                 <Layout>
@@ -73,7 +73,7 @@ function App() {
               </ProtectedRoute>
             } />
             
-            {/* Admin Routes */}
+
             <Route path="/admin" element={
               <ProtectedRoute requiredRole="admin">
                 <Layout>
@@ -96,7 +96,7 @@ function App() {
               </ProtectedRoute>
             } />
             
-            {/* Redirect root to login */}
+
             <Route path="/" element={<Navigate to="/login\" replace />} />
           </Routes>
         </div>
