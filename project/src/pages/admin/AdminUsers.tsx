@@ -59,7 +59,6 @@ const AdminUsers: React.FC = () => {
 
   return (
       <div className="space-y-6">
-        {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Employee Management</h1>
@@ -71,7 +70,7 @@ const AdminUsers: React.FC = () => {
           </div>
         </div>
 
-        {/* Search */}
+
         <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -85,7 +84,7 @@ const AdminUsers: React.FC = () => {
           </div>
         </div>
 
-        {/* Users Grid */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredUsers.length === 0 ? (
               <div className="col-span-full bg-white/70 backdrop-blur-sm rounded-2xl p-12 text-center shadow-lg border border-white/50">
