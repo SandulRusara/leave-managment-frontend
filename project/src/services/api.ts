@@ -3,7 +3,7 @@ import { User, LeaveRequest, LeaveStats } from '../types';
 
 const API_BASE_URL = 'http://localhost:8000/api';
 
-
+// Create axios instance
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
@@ -11,7 +11,7 @@ const api = axios.create({
   },
 });
 
-
+// Add token to requests
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -20,7 +20,7 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-
+// Mock data for demonstration
 const mockUsers: User[] = [
   {
     id: 1,
@@ -89,16 +89,16 @@ const mockLeaveRequests: LeaveRequest[] = [
   },
 ];
 
-
+// Mock API functions (replace with real API calls)
 export const authAPI = {
   login: async (email: string, password: string) => {
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     const user = mockUsers.find(u => u.email === email);
     if (!user || password !== 'password') {
       throw new Error('Invalid credentials');
     }
-    
+
     return {
       user,
       token: 'mock_jwt_token_' + Date.now(),
@@ -107,7 +107,7 @@ export const authAPI = {
 
   register: async (name: string, email: string, password: string, role: string = 'employee') => {
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     if (mockUsers.find(u => u.email === email)) {
       throw new Error('Email already exists');
     }
@@ -119,9 +119,9 @@ export const authAPI = {
       role: role as 'admin' | 'employee',
       created_at: new Date().toISOString(),
     };
-    
+
     mockUsers.push(newUser);
-    
+
     return {
       user: newUser,
       token: 'mock_jwt_token_' + Date.now(),
@@ -130,24 +130,24 @@ export const authAPI = {
 
   getUser: async () => {
     await new Promise(resolve => setTimeout(resolve, 500));
-    return mockUsers[1];
+    return mockUsers[1]; // Return mock user
   },
 };
 
 export const leaveAPI = {
   getLeaves: async (userId?: number) => {
     await new Promise(resolve => setTimeout(resolve, 800));
-    
+
     if (userId) {
       return mockLeaveRequests.filter(leave => leave.user_id === userId);
     }
-    
+
     return mockLeaveRequests;
   },
 
   createLeave: async (leaveData: Omit<LeaveRequest, 'id' | 'user' | 'status' | 'created_at' | 'updated_at'>) => {
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     const newLeave: LeaveRequest = {
       ...leaveData,
       id: mockLeaveRequests.length + 1,
@@ -156,32 +156,32 @@ export const leaveAPI = {
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     };
-    
+
     mockLeaveRequests.push(newLeave);
     return newLeave;
   },
 
   updateLeave: async (id: number, status: 'approved' | 'rejected', admin_comment?: string) => {
     await new Promise(resolve => setTimeout(resolve, 800));
-    
+
     const leaveIndex = mockLeaveRequests.findIndex(leave => leave.id === id);
     if (leaveIndex === -1) {
       throw new Error('Leave request not found');
     }
-    
+
     mockLeaveRequests[leaveIndex] = {
       ...mockLeaveRequests[leaveIndex],
       status,
       admin_comment,
       updated_at: new Date().toISOString(),
     };
-    
+
     return mockLeaveRequests[leaveIndex];
   },
 
   getStats: async (): Promise<LeaveStats> => {
     await new Promise(resolve => setTimeout(resolve, 600));
-    
+
     return {
       total_requests: mockLeaveRequests.length,
       pending_requests: mockLeaveRequests.filter(l => l.status === 'pending').length,
