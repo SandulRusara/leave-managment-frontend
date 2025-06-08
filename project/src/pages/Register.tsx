@@ -33,7 +33,7 @@ const Register: React.FC = () => {
     try {
       await registerUser(data.name, data.email, data.password);
     } catch (error) {
-      // Error is handled by the AuthContext
+
     } finally {
       setIsLoading(false);
     }

@@ -32,7 +32,7 @@ const Login: React.FC = () => {
     try {
       await login(data.email, data.password);
     } catch (error) {
-      // Error is handled by the AuthContext
+
     } finally {
       setIsLoading(false);
     }
